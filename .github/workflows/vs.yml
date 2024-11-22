@@ -1,0 +1,27 @@
+name: Vivid Seats Workflow
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+  id-token: none
+  deployments: none
+  packages: none
+  statuses: none
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - stage
+  pull_request:
+    branches:
+      - main
+      - master
+      - stage
+
+jobs:
+  build:
+    uses: VividSeats/platform-toolbox/.github/workflows/vs.yml@main
+
