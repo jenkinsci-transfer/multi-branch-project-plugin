@@ -1,0 +1,27 @@
+name: VS Code Standards Workflow
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+  id-token: none
+  deployments: none
+  packages: none
+  statuses: none
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - stage
+  pull_request:
+    branches:
+      - main
+      - master
+      - stage
+
+jobs:
+  owner-check:
+    uses: VividSeats/platform-toolbox/.github/workflows/vs.yml@main
+
